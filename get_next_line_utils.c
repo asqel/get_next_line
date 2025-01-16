@@ -6,7 +6,7 @@
 /*   By: axlleres <axlleres@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 02:34:10 by axlleres          #+#    #+#             */
-/*   Updated: 2024/11/29 02:34:56 by axlleres         ###   ########.fr       */
+/*   Updated: 2025/01/16 17:01:20 by axlleres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,8 @@ int	read_enough(int fd, char **rest)
 	int		bytes_read;
 
 	buffer = malloc(BUFFER_SIZE + 1);
+	if (buffer == NULL)
+		return (-1);
 	while (ft_strchr(*rest, '\n') == -1)
 	{
 		bytes_read = read(fd, buffer, BUFFER_SIZE);
